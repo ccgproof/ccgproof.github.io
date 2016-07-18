@@ -1,0 +1,196 @@
+.main {
+        height: 250px;
+        width: 300px;
+        background-color: #e3e2d0;
+        position: relative;
+    }
+    
+    .frame1 {
+        height: 230px;
+        width: 280px;
+        margin: 10px;
+        background-image: url(images/back-img.jpg);
+        border-radius: 10%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 4;
+        -webkit-animation-name: trans1;
+        -webkit-animation-duration: 1s; 
+        -webkit-animation-timing-function: ease; 
+        -webkit-animation-delay: 2s;
+        -webkit-animation-direction: normal;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-play-state: running;  
+        animation-name: trans1;
+        animation-duration: 1s; 
+        animation-timing-function: ease; 
+        animation-delay: 2s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: running;  
+    }
+    
+    .frame1 div {
+        height: 55px;
+        background-color: #92ad5b;
+        margin-top: 145px;        
+    }
+    
+    .frame1 img{
+        margin-top: 12px;
+        margin-left: 8px;
+    }
+
+    .frame1b {
+            height: 230px;
+            width: 280px;
+            margin: 10px;
+            background-image: url(images/back-img.jpg);
+            border-radius: 10%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            -webkit-animation-name: trans1b;
+            animation-name: trans1b;
+    }
+
+    .frame1b div {
+        height: 55px;
+        background-color: #92ad5b;
+        margin-top: 145px;        
+    }
+    
+    .frame1b img{
+        margin-top: 12px;
+        margin-left: 8px;
+    }
+
+    
+    .frame2 {
+        height: 230px;
+        width: 280px;
+        margin: 10px;
+        border-radius: 10%;
+        background-color: #92ad5b;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 3;
+        -webkit-animation-name: trans2;
+        -webkit-animation-duration: 1s; 
+        -webkit-animation-timing-function: ease; 
+        -webkit-animation-delay: 5s;
+        -webkit-animation-direction: normal;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-play-state: running;        
+        animation-name: trans2;
+        animation-duration: 1s; 
+        animation-timing-function: ease; 
+        animation-delay: 5s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+
+    }
+    
+    .frame2 img{
+    margin-top: 53px;
+    margin-left: 55px;
+    }
+    
+    .frame3 {
+        height: 230px;
+        width: 280px;
+        margin: 10px;
+        border-radius: 10%;
+        background-color: #92ad5b;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 2;        
+        -webkit-animation-name: trans3;
+        -webkit-animation-duration: 1s; 
+        -webkit-animation-timing-function: ease; 
+        -webkit-animation-delay: 8s;
+        -webkit-animation-direction: normal;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-play-state: running;        
+        animation-name: trans3;
+        animation-duration: 1s; 
+        animation-timing-function: ease; 
+        animation-delay: 8s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    
+    .frame3 img {
+        width: 75%;
+        height: auto;
+        margin-left: 30px;
+        margin-top: 45px;
+    }
+    
+    .address {
+        height: 230px;
+        width: 280px;
+        margin: 10px;
+        border-radius: 10%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 5;
+    }   
+    
+    p {
+        font-size: 12px;
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+        text-align: center;
+        padding-top: 195px;
+    }  
+    
+    @-webkit-keyframes trans1 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}          
+    }
+
+    @keyframes trans1 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}          
+    }
+
+    @-webkit-keyframes trans2 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    @keyframes trans2 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    } 
+
+    @-webkit-keyframes trans3 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    } 
+    
+    @keyframes trans3 {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    @-webkit-keyframes trans1b {
+        100% {opacity: 1;}
+    }
+
+    @keyframes trans1b {
+        100% {opacity: 1;}
+    }
