@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Visit Omaha</title>
     <meta charset="utf-8" />
-    <title>Sample MCC</title>
+    <meta name="ad.size" content="width=300,height=250">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./style.css">
     
-
-
+     <script>
+        setInterval(function(){
+        var container = document.getElementById('wrapper');
+        var tmp = container.innerHTML;
+        container.innerHTML= tmp;
+        }, 10000 
+        )        
+    </script>   
         
 </head>
 <body>
-<img src="images/sample-animation.gif">
+    
+    <div id="wrapper" onclick="window.open(window.clickTag)" style="cursor: pointer">
+        <div class="main">
+
+            <div class="frame1">
+                <div>
+                    <img src="images/text1.png" />  
+                </div>
+            </div>
+
+            <div class="frame2">
+                <img src="images/text2.png" />  
+            </div>
+
+            <div class="frame3">
+                <img src="images/logo.png" />        
+            </div>
+            
+            <div class="frame1b">
+                <div>
+                    <img src="images/text1.png" />  
+                </div>
+            </div>  
+      
+            <div class="address">
+                 <p> VisitOmaha.com/MeetHere</p>
+            </div>      
+            
+        </div>
+    </div>   
     
 </body>
 </html>
