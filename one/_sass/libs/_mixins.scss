@@ -1,0 +1,181 @@
+// Gradient
+@mixin sr-gradient($start, $end) {
+    background: $start; /* Old browsers */
+    background: -moz-linear-gradient(left, $start 0%, $end 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left, right, color-stop(0%,$start), color-stop(100%,$end)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, $start 0%,$end 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, $start 0%,$end 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, $start 0%,$end 100%); /* IE10+ */
+    background: linear-gradient(to bottom, $start 0%,$end 100%); /* W3C */
+}
+
+// Box Shadows
+@mixin sr-box-shadow($top, $left, $blur, $color, $inset: "") {
+    -webkit-box-shadow: $top $left $blur $color #{$inset};
+    -moz-box-shadow: $top $left $blur $color #{$inset};
+    box-shadow: $top $left $blur $color #{$inset};
+}
+
+// Transitions
+@mixin sr-transition($delay) {
+    -webkit-font-smoothing: antialiased;
+    -o-transition: $delay;
+    -ms-transition: $delay;
+    -moz-transition: $delay;
+    -webkit-transition: $delay;
+    transition: $delay;
+}
+
+// Box Sizing
+@mixin sr-box-sizing($val) {
+    box-sizing: $val;
+    -webkit-box-sizing: $val;
+    -moz-box-sizing: $val;
+}
+
+// Rounded Borders
+@mixin sr-border-radius($radius, $color: null) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+
+    @if $color != null {
+        border: 1px solid $color;
+    }
+}
+
+// Hide inline text
+@mixin sr-hide-text() {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+// :before and :after pseudo elements
+@mixin sr-before-after() {
+    position: absolute;
+    content: "";
+    @include sr-hide-text();
+}
+
+// Automatically clear all floated children
+// Blatantly stolen and adapted to SASS from: http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin sr-clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    // For IE 6/7 only
+    & {
+        *zoom: 1;
+    }
+}
+
+// Media Queries
+@mixin sr-respond-to($media) {
+  @if $media == smartphone {
+    @media only screen and (max-width : 600px) { @content; }
+  }
+  @else if $media == smartphone-landscape {
+    @media only screen and (min-width : 401px) and (max-width : 600px) { @content; }
+  }
+  @else if $media == smartphone-portrait {
+    @media only screen and (max-width : 400px) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width : 601px) and (max-width : 1024px) { @content; }
+  }
+  @else if $media == tablet-landscape {
+    @media only screen and (min-width : 769px) and (max-width : 1024px) and (orientation : landscape) { @content; }
+  }
+  @else if $media == tablet-portrait {
+    @media only screen and (min-width : 601px) and (max-width : 768px) and (orientation : portrait) { @content; }
+  }
+  @else if $media == tablet-and-below {
+    @media only screen and (max-width : 1024px) { @content; }
+  }
+  @else if $media == tablet-portrait-and-below {
+    @media only screen and (max-width : 768px) and (orientation : portrait) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: 1025px) { @content; }
+  }
+  @else {
+    @media only screen and (min-width: $media) { @content; }
+  }
+}
+
+// TypeKit document classes
+@mixin sr-typekit() {
+    &,
+    html.wf-loading & {
+        visibility: hidden;
+    }
+    html.wf-active &,
+    html.wf-inactive &,
+    html.no-js & {
+        visibility: visible;
+    }
+}
+
+// Web font builder
+@mixin sr-web-font($font, $weight, $style: normal) {
+    & {
+        font-family: $font;
+        font-weight: $weight;
+        font-style: $style;
+        visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: none;
+        text-rendering: optimizeLegibility;
+    }
+    html.wf-loading & {
+        visibility: hidden;
+    }
+    html.wf-active &,
+    html.wf-inactive &,
+    html.no-js & {
+        visibility: visible;
+    }
+    html.ie7 & {
+        visibility: visible;
+    }
+}
+
+// Force hardware accleration
+@mixin sr-hardware-acceleration() {
+    -moz-transform: translate3d(0,0,0); /* Firefox 4 */
+    -webkit-transform: translate3d(0,0,0); /* Safari and Chrome */
+    -o-transform: translate3d(0,0,0); /* Opera */
+    -ms-transform: translate3d(0,0,0); /* IExplorer 10 */
+    transform: translate3d(0,0,0);
+}
+
+// Placeholder text color
+@mixin sr-placeholder() {
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+// Placeholder
+@mixin sr-vendor-prefix($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -o-#{$property}: $value;
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}

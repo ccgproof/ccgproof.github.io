@@ -1,0 +1,327 @@
+//-------------------------
+// ANIMATIONS
+//-------------------------
+
+@include keyframes(liquid-movement) {
+  0% { 
+    @include rotate(0);
+  }
+  10% {
+      @include rotate(25);
+  }
+  20% {
+      @include rotate(0);
+  }
+  22% {
+      @include rotate(-15);
+  }
+  24% {
+      @include rotate(12);
+  }
+  26% {
+      @include rotate(-10);
+  }
+  29% {
+      @include rotate(0);
+  }
+  35% {
+      @include rotate(6);
+  }
+  41% {
+      @include rotate(-3);
+  }
+  47% {
+      @include rotate(0);
+  }
+  100% {
+    @include rotate(0);
+  }
+}
+
+@include keyframes(logo-drop) {
+  0% { 
+    @include translate(0px, -91px);
+  }
+  50% {
+     @include translate(0px,5px);  
+  }
+  70% {
+     @include translate(0px,-3px);  
+  }
+   100% {
+     @include translate(0px,0px);  
+  }
+}
+
+@include keyframes(beer-movement) {
+    0% {
+        @include translate(728px, 0px);  
+    }
+    100% {
+        @include translate(0px, 0px);  
+    }
+}
+
+@include keyframes(beer-glass-rotation) {
+    0% {
+        @include transform-origin(50% 100%);
+        @include rotate(-20);
+    }
+    60% { 
+        @include rotate(-20);
+    }
+    70% { 
+        @include rotate(5);
+    }
+    75% { 
+        @include rotate(-3);
+    }
+    80% { 
+        @include rotate(0);
+    }
+    100% { 
+        @include rotate(0);
+    }
+}
+
+//-------------------------
+// AD ELEMENTS
+//-------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+body {
+    position: absolute;
+	background-color: #252525;	
+    width: 100%;
+    height: 100%;
+}
+
+#ad {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 728px;
+    height: 90px;
+    font-family: Times, 'Times New Roman', serif;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+    background-color: $tan;
+    overflow: hidden;
+    border: 1px solid $brown;
+    cursor: pointer;
+}
+
+#ad div,
+#ad span {
+    position: absolute;
+    -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+#brewlogo {
+    @include sr-hardware-acceleration();
+    @include animation('logo-drop .8s ease-out both');
+    left: 8px;
+    top: -6px;
+    width: 83px;
+    height: 91px;
+    text-indent: -9999em;
+    background: url('sprite@1x.png') no-repeat;
+    background-position: -32px 0px;
+
+     @include retina {
+         background: url('sprite@2x.png') no-repeat;
+         background-size: 390px 140px;
+         background-position: -32px 0px;
+    }
+}
+
+#beercontainer {
+    @include sr-hardware-acceleration();
+    @include animation('beer-movement 1s 1s ease-out both');
+    left: -581px;
+    width: 728px;
+    height: 90px;
+    background-color: $tan;
+}
+
+#beer {
+    @include sr-hardware-acceleration();
+    @include animation('beer-glass-rotation 1.6s 1s ease-out both');
+    top: 7px;
+    right: 0px;
+    width: 43px;
+    height: 74px;
+    outline: 1px solid transparent;
+    overflow: hidden;
+   
+    
+    &:before {
+      @include sr-hardware-acceleration();
+      @include animation('liquid-movement 6s 1s ease-out both');
+      content: '';
+      position: absolute;
+      left: -10px;
+      bottom: 0;
+      width: 63px;
+      height: 50px;
+      background-color: $beer;
+      border: 1px solid $brown;
+      border-width: 1px 0 0 0;
+    }
+    
+    #glass {
+      @include sr-hardware-acceleration();
+      width: 43px;
+      height: 74px;
+      background: url('sprite@1x.png') no-repeat;
+      background-position: -242px 0px;
+  
+       @include retina {
+           background: url('sprite@2x.png') no-repeat;
+           background-size: 390px 140px;
+           background-position: -242px 0px;
+      }
+    }
+    
+}
+
+.content-wrap {
+    top: 6px;
+    right: 10px;
+    width: 558px;
+    height: 74px;
+    border: 1px solid $brown;
+    border-width: 1px 0 1px 0;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 558px;
+      height: 68px;     
+      border: 1px solid $brown;
+      border-width: 2px 0 2px 0;
+    }
+    
+    .headline {
+        left: 0;
+        top: 0px;
+        width: 282px;
+        height: 50px;
+        margin: 18px 0 0 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 20px;
+        line-height: 105%;
+        letter-spacing: 1px;
+        text-indent: -9999em;
+        overflow: hidden;
+        background: url('sprite@1x.png') no-repeat;
+        background-position: 13px -101px;
+        
+        @include retina {
+           background: url('sprite@2x.png') no-repeat;
+           background-size: 390px 140px;
+           background-position: 13px -101px;
+        }
+    }
+    
+    .cta {
+      @include sr-hardware-acceleration();
+      @include sr-transition(all 0.1s); 
+      right: 110px;
+      top: 18px;
+      width: 141px;
+      height: 27px;
+      padding: 11px 0 0 15px;
+      color: $tan;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-indent: -9999em;
+        overflow: hidden;
+        background: url('sprite@1x.png') no-repeat $brown;
+        background-position: -268px -101px;
+        
+        @include retina {
+           background: url('sprite@2x.png') no-repeat $brown;
+           background-size: 390px 140px;
+           background-position: -268px -101px;
+        }
+      
+        &:before {
+          position: absolute;
+          left: 2px;
+          top: 2px;
+          height: 32px;
+          width: 150px;
+          content: '';
+          border: 1px solid $tan;
+        }
+        
+        .arrow {
+          @include sr-hardware-acceleration();
+          @include sr-transition(all 0.2s); 
+          top: 12px;
+          right: 15px;
+          width: 11px;
+          height: 13px;
+          background: url('sprite@1x.png') no-repeat;
+        
+             @include retina {
+                 background: url('sprite@2x.png') no-repeat;
+                 background-size: 390px 140px;
+            }
+        }
+    }
+}
+
+#ad a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    
+     &:hover {
+        
+        .cta {
+            background-color: lighten( $brown, 6% );
+            border-color: lighten( $brown, 6% );
+            
+            .arrow {
+               @include translate(3px,0px); 
+            }
+        }
+     }
+}
+
+#omahalogo {
+  right: 16px;
+  top: 15px;
+  width: 87px;
+  height: 54px;
+  text-indent: -9999em;
+  background: url('sprite@1x.png') no-repeat;
+  background-position: -135px 0px;
+
+     @include retina {
+         background: url('sprite@2x.png') no-repeat;
+         background-size: 390px 140px;
+         background-position: -135px 0px;
+    }
+}
