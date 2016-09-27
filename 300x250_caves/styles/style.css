@@ -1,6 +1,9 @@
 #ad {
     height: 250px;
     width: 300px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
     background-image: url(../images/background-img.png);
 }
 

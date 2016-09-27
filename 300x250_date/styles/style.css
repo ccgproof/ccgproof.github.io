@@ -1,0 +1,35 @@
+#ad {
+    height: 250px;
+    width: 300px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-image: url(../images/background-img.png);
+}
+
+#video-container{
+    height: auto;
+    width: 300px;
+}
+
+video {
+    height: auto;
+    width: 100%;
+    object-fit: inherit;
+}
+
+.button {
+    background-image: url(../images/ribbon.png);
+    cursor: pointer;
+    height: 75px;
+    width: 300px;
+}
+
+button {
+    padding: 0px;
+    border: none;
+    background: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+}
