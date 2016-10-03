@@ -10,7 +10,6 @@
 #video-container{
     height: auto;
     width: 300px;
-    padding-top: 40px;
 }
 
 video {
@@ -45,9 +44,14 @@ button {
     padding-top: 3px;
 }
 
+.wttw img {
+    margin-left: 84px;
+    margin-top: 25px;
+}
+
 .callout {
     padding-left: 20px;
-    margin-top: 150px;
+    margin-top: 30px;
 }
 
 h1 {

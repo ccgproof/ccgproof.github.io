@@ -20,8 +20,11 @@ video {
 
 .button {
     background-image: url(../images/ribbon.png);
+    background-size: 83%;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
-    height: 75px;
+    height: 60px;
     width: 300px;
 }
 
@@ -30,6 +33,6 @@ button {
     border: none;
     background: none;
     font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     color: #FFFFFF;
 }
